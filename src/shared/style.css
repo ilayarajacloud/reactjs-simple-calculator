@@ -1,0 +1,15 @@
+.input-field{
+  margin: 5px;
+  display: block;
+  padding: 10px 5px;
+}
+.input-field label{
+  display: block;
+  padding: 5px;
+}
+.input-field input{
+  padding: 8px 20px;
+}
+.btn-button{
+  margin: 3px;
+}
