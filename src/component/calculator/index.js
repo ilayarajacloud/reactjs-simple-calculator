@@ -17,29 +17,43 @@ const Calculator = () => {
     setSecondNumber(parseInt(value))
   }
 
-  const addCalculate = () => {
-    const result = (firstNumber) + (secondNumber);
-    console.log(result);
-    setOutput(result);
 
+
+  const addCalculate = () => {
+    if (firstNumber == "" || secondNumber == "") {
+      alert("please entere the value");
+    } else {
+      const result = (firstNumber) + (secondNumber);
+      console.log(result);
+      setOutput(result);
+    }
   }
 
   const addSubtaction = () => {
-    const result = (firstNumber) - (secondNumber);
-    setOutput(result);
-
+    if (firstNumber == "" || secondNumber == "") {
+      alert("please entere the value");
+    } else {
+      const result = (firstNumber) - (secondNumber);
+      setOutput(result);
+    }
   }
 
   const addMultiple = () => {
-    const result = (firstNumber) * (secondNumber);
-    setOutput(result);
-
+    if (firstNumber == "" || secondNumber == "") {
+      alert("please entere the value");
+    } else {
+      const result = (firstNumber) * (secondNumber);
+      setOutput(result);
+    }
   }
 
   const addDivistion = () => {
-    const result = (firstNumber) / (secondNumber);
-    setOutput(result);
-
+    if (firstNumber == "" || secondNumber == "") {
+      alert("please entere the value");
+    } else {
+      const result = (firstNumber) / (secondNumber);
+      setOutput(result);
+    }
   }
   const clearAll = () => {
     setFirstNumber("");
@@ -93,13 +107,13 @@ const Calculator = () => {
           />
 
         </div>
-        <h4>{output}</h4>
-        <Button
+        {output && <h4>Result : {output}</h4>}
+        {output && <Button
           type="button"
           onClick={clearAll}
           label="Clear"
           className="danger"
-        />
+        />}
       </div>
     </div>
   )
