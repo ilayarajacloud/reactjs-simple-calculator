@@ -4,9 +4,9 @@ import Button from '../../shared/button'
 import "./style.css"
 
 const Calculator = () => {
-  const [firstNumber, setFirstNumber] = useState('');
-  const [secondNumber, setSecondNumber] = useState('');
-  const [output, setOutput] = useState(0);
+  const [firstNumber, setFirstNumber] = useState();
+  const [secondNumber, setSecondNumber] = useState();
+  const [output, setOutput] = useState(null);
 
   const onChangeHandler1 = (e) => {
     const { value } = e.target
@@ -58,7 +58,7 @@ const Calculator = () => {
   const clearAll = () => {
     setFirstNumber("");
     setSecondNumber("");
-    setOutput();
+    setOutput(null);
   }
 
 
@@ -107,8 +107,9 @@ const Calculator = () => {
           />
 
         </div>
-        {output && <h4>Result : {output}</h4>}
-        {output && <Button
+        {/* {output} */}
+        {output !== null && <h4>Result : {output}</h4>}
+        {output !== null && <Button
           type="button"
           onClick={clearAll}
           label="Clear"
